@@ -129,6 +129,9 @@ COMPOSE_FILE=docker-compose.yml:weboffice/collabora.yml:traefik/opencloud.yml:tr
 
 ### With Full Text Search
 
+> [!CAUTION]
+> This does not currently work! The login is broken when enabled (with authentik and without)
+
 Enable full text search capabilities with Apache Tika using either method:
 
 > **DNS Requirements**: This setup requires DNS entries for the main OpenCloud domain. Configure a DNS A/AAAA record for your domain (e.g., `cloud.example.com`) or use a wildcard DNS entry (`*.example.com`).

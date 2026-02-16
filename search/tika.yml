@@ -2,13 +2,14 @@
 services:
   tika:
     image: ${TIKA_IMAGE:-apache/tika:latest}
+    container_name: opencloud-tika
     # Using the base variant for smaller image size and faster startup
     # The base variant includes core functionality for text extraction
     # Full variant is only needed for specialized OCR/image processing
     # release notes: https://tika.apache.org
     networks:
       opencloud-net:
-    restart: always
+    restart: unless-stopped
     logging:
       driver: ${LOG_DRIVER:-local}
 
