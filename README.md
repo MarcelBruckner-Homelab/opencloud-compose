@@ -127,6 +127,11 @@ COMPOSE_FILE=docker-compose.yml:weboffice/collabora.yml:traefik/opencloud.yml:tr
 > 127.0.0.1 wopiserver.opencloud.test
 > ```
 
+### With Authentik
+
+> [!WARNING]
+> This is not oficially supported, but works nicely with some advanced setup: https://github.com/orgs/opencloud-eu/discussions/1014
+
 ### With Full Text Search
 
 > [!CAUTION]
