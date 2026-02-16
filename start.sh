@@ -5,4 +5,4 @@ docker compose down
 mkdir -p data
 chown -R 1000:1000 .
 
-docker compose up -d
+docker compose up -d --remove-orphans
