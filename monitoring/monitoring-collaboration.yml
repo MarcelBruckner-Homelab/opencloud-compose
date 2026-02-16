@@ -5,3 +5,5 @@ services:
     environment:
       # metrics
       COLLABORATION_DEBUG_ADDR: 0.0.0.0:9304
+    ports:
+      - 9304:9304
