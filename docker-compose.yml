@@ -2,6 +2,7 @@
 services:
   opencloud:
     image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-latest}
+    container_name: opencloud
     # changelog: https://github.com/opencloud-eu/opencloud/tree/main/changelog
     # release notes: https://docs.opencloud.eu/opencloud_release_notes.html
     user: ${OC_CONTAINER_UID_GID:-1000:1000}
@@ -66,9 +67,6 @@ services:
       driver: ${LOG_DRIVER:-local}
     restart: always
 
-volumes:
-  opencloud-config:
-  opencloud-data:
 
 networks:
   opencloud-net:

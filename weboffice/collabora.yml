@@ -15,6 +15,7 @@ services:
 
   collaboration:
     image: ${OC_DOCKER_IMAGE:-opencloudeu/opencloud-rolling}:${OC_DOCKER_TAG:-latest}
+    container_name: opencloud-collaboration
     user: ${OC_CONTAINER_UID_GID:-1000:1000}
     networks:
       opencloud-net:
@@ -49,6 +50,7 @@ services:
 
   collabora:
     image: collabora/code:25.04.7.1.1
+    container_name: opencloud-collabora
     # release notes: https://www.collaboraonline.com/release-notes/
     networks:
       opencloud-net:
