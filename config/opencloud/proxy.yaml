@@ -38,3 +38,17 @@ additional_policies:
 #        skip_x_access_token: true
 #        additional_headers:
 #          - X-Script-Name: /caldav
+
+role_assignment:
+  driver: oidc
+  oidc_role_mapper:
+    role_claim: groups
+    role_mapping:
+      - role_name: admin 
+        claim_value: opencloud-admins
+      - role_name: spaceadmin
+        claim_value: opencloud-spaceadmins 
+      - role_name: user
+        claim_value: opencloud-users
+      - role_name: guest
+        claim_value: opencloud-guests

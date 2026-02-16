@@ -1,0 +1,23 @@
+---
+services:
+  opencloud:
+    environment:
+      # SSO
+      OC_OIDC_ISSUER: https://auth.marcelbruckner.com/application/o/opencloud/
+      WEB_OIDC_CLIENT_ID: abrFS2gPjYmGbO27BcYrMu2Kn8evqEN2FMA6oM3M
+      ## Proxy
+      PROXY_AUTOPROVISION_ACCOUNTS: true
+      PROXY_ROLE_ASSIGNMENT_DRIVER: "oidc"
+      PROXY_OIDC_REWRITE_WELLKNOWN: "true"
+      PROXY_USER_OIDC_CLAIM: "preferred_username"
+      PROXY_USER_CS3_CLAIM: "username"
+      ## role assignment
+      OC_EXCLUDE_RUN_SERVICES: idp
+      WEB_OIDC_SCOPE: openid profile email groups
+      PROXY_ROLE_ASSIGNMENT_OIDC_CLAIM: groups
+      GRAPH_ASSIGN_DEFAULT_USER_ROLE: false
+      GRAPH_USERNAME_MATCH: "none"
+      PROXY_OIDC_ACCESS_TOKEN_VERIFY_METHOD: none
+
+      # CSP
+      PROXY_CSP_CONFIG_FILE_LOCATION: /etc/opencloud/csp.yaml
